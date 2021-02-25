@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="tests.InfiniteScrollTests" time="4.114" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="tests.InfiniteScrollTests" time="4.102" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="13+33"/>
@@ -58,5 +58,5 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="tests.InfiniteScrollTests" name="InfiniteScroll_Allows_DynamicScrolling" time="4.114"/>
+  <testcase classname="tests.InfiniteScrollTests" name="InfiniteScroll_Allows_DynamicScrolling" time="4.102"/>
 </testsuite>

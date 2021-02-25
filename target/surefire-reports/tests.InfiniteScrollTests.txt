@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: tests.InfiniteScrollTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.246 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.141 sec
