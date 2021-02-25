@@ -20,6 +20,7 @@ public class KeyPressTests extends BaseTest {
 
 	@Test
 	public void KeyPress_Returns_LastKeyPressed(){
+                //Message field logs the most recent key pressed, rather than combination keys. % displays as 5.
 		keyPressPage.sendKeyToTargetField("%");
 		assertEquals(keyPressPage.getLastPressedKey(),"5");
 		

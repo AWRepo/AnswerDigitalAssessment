@@ -35,14 +35,9 @@ public class LoginAuthenticationTests extends BaseTest{
 		
 		loginAuthenticationPage.loginWith(username, password);
 		
-		//Two choices for asserting.
-		//Test whether a flash message containing a specific error message appears
-		//Problem with this method is any small changes to the error message breaks the test.
-		//Test whether an error flash message appears.
-		//Problem with this method is it doesn't specifically look for an incorrect password error.
-		
-		
-		//assertEquals(loginAuthenticationPage.getFlashMessage(),errorMessage);
+                //Asserting whether an error prompt has appeared, and whether the error prompt has the correct message.
+                
+		assertEquals(loginAuthenticationPage.getFlashMessage(),errorMessage);
 		assertEquals(loginAuthenticationPage.getFlashType(),"error");
 		
 	}
@@ -53,16 +48,12 @@ public class LoginAuthenticationTests extends BaseTest{
 		String password = "SuperSecretPassword!";
 		String errorMessage = "Your username is invalid!";
 		
-		//Two choices for asserting.
-		//Test whether a flash message containing a specific error message appears
-		//Problem with this method is any small changes to the error message breaks the test.
-		//Test whether an error flash message appears.
-		//Problem with this method is it doesn't specifically look for an incorrect username error.
-		
 		loginAuthenticationPage.loginWith(username, password);
 
+                //Asserting whether an error prompt has appeared, and whether the error prompt has the correct message.
+                
 		assertEquals(loginAuthenticationPage.getFlashMessage(),errorMessage);
-		//assertEquals(loginAuthenticationPage.getFlashType(),"error");
+		assertEquals(loginAuthenticationPage.getFlashType(),"error");
 		
 	}
 	
@@ -71,15 +62,9 @@ public class LoginAuthenticationTests extends BaseTest{
 		String username = "tomsmith";
 		String password = "SuperSecretPassword!";
 		
-		
 		loginAuthenticationPage.loginWith(username, password);
 		
-		//assertEquals(loginAuthenticationPage.getCurrentURL(),LoginAuthenticationPage.SUCCESS_URL);
 		loginAuthenticationPage.logout();
-		
-		//assertEquals(loginAuthenticationPage.getCurrentURL(),LoginAuthenticationPage.LOGIN_URL);
-		
-		
 	}
 
 }

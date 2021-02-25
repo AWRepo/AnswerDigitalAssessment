@@ -22,10 +22,6 @@ public class BaseTest {
 		initialise("http://the-internet.herokuapp.com");
 	}
 	
-	
-
-	
-	
 	/**
 	 * Initialises the driver to a specific webpage base on the given link
 	 * @param webLink starting page

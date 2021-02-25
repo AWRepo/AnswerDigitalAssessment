@@ -24,11 +24,6 @@ public class InfiniteScrollTests extends BaseTest{
 		String searchText = "Infinite Scroll";
 		int waitTime = 1000;
 		
-		//Using Thread.sleep / fixed time waits isn't ideal as it's unstable across slower connections / browsers.
-		//However attempts to implement a suitable explicit wait isn't working for all cases.
-		//As varying resolutions / window sizes alter the default elements to work with.
-		//So it's hard to ensure the page is fully loaded before / after each scroll attempt.
-		//Probably is a solution without using sleep, however most info I can find resorts to Thread.sleep.
 		infiniteScrollPage.initialiseHeight();
 		
 		try {

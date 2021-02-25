@@ -10,25 +10,22 @@ public class BasePage {
 
 	protected WebDriver driver;
 	
-	private JavascriptExecutor js;
-	
 	protected BasePage(WebDriver driver) {
 		this.driver = driver;
-		js = (JavascriptExecutor) driver;
 	}
 	
 	/**
 	 * Scrolls browser to the bottom of the current page.
 	 */
 	public void scrollToBottomOfPage() {
-		js.executeScript("window.scrollTo(0,document.body.scrollHeight);");
+		((JavascriptExecutor)driver).executeScript("window.scrollTo(0,document.body.scrollHeight);");
 	}
 	
 	/**
 	 * Scrolls browser to the top of the current page.
 	 */
 	public void scrollToTopOfPage() {
-		js.executeScript("window.scrollTo(0,0)");
+		((JavascriptExecutor)driver).executeScript("window.scrollTo(0,0)");
 	}
 	
 	/**
@@ -37,7 +34,7 @@ public class BasePage {
 	 * @param y pixel to scroll to.
 	 */
 	public void scrollToXY(int x, int y) {
-		js.executeScript(String.format("window.scrollTo(%s,%s)",x,y));
+		((JavascriptExecutor)driver).executeScript(String.format("window.scrollTo(%s,%s)",x,y));
 	}
 	
 	
