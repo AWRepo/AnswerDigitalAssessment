@@ -13,13 +13,13 @@ public class MenuPage extends BasePage {
 	 * Used to navigate to the Login Authentication page from the main menu.
 	 */
 	public void navigateToLoginAuthentication() {
-		driver.findElement(loginAuthenticationLink).click();
+            driver.findElement(loginAuthenticationLink).click();
 	}
 	/**
 	 * Used to navigate to the Infinite Scroll page from the main menu.
 	 */
 	public void navigateToInfiniteScroll() {
-		driver.findElement(infiniteScrollLink).click();
+            driver.findElement(infiniteScrollLink).click();
 	}
 	
 	/**

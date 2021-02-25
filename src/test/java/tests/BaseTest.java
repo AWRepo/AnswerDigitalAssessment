@@ -19,7 +19,7 @@ public class BaseTest {
 	 * Default: http://the-internet.herokuapp.com
 	 */
 	protected static void initialise() {
-		initialise("http://the-internet.herokuapp.com");
+            initialise("http://the-internet.herokuapp.com");
 	}
 	
 	/**
@@ -27,18 +27,18 @@ public class BaseTest {
 	 * @param webLink starting page
 	 */
 	protected static void initialise(String webLink) {
-		System.setProperty("webdriver.chrome.driver",CHROME_DRIVER_DIRECTORY);
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-		menuPage = new MenuPage(driver);
-		driver.get(webLink);
+            System.setProperty("webdriver.chrome.driver",CHROME_DRIVER_DIRECTORY);
+            driver = new ChromeDriver();
+            driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+            menuPage = new MenuPage(driver);
+            driver.get(webLink);
 
 		
 	}
 		
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception{
-		driver.quit();
+            driver.quit();
 	}
 
 }

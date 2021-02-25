@@ -11,21 +11,21 @@ public class BasePage {
 	protected WebDriver driver;
 	
 	protected BasePage(WebDriver driver) {
-		this.driver = driver;
+            this.driver = driver;
 	}
 	
 	/**
 	 * Scrolls browser to the bottom of the current page.
 	 */
 	public void scrollToBottomOfPage() {
-		((JavascriptExecutor)driver).executeScript("window.scrollTo(0,document.body.scrollHeight);");
+            ((JavascriptExecutor)driver).executeScript("window.scrollTo(0,document.body.scrollHeight);");
 	}
 	
 	/**
 	 * Scrolls browser to the top of the current page.
 	 */
 	public void scrollToTopOfPage() {
-		((JavascriptExecutor)driver).executeScript("window.scrollTo(0,0)");
+            ((JavascriptExecutor)driver).executeScript("window.scrollTo(0,0)");
 	}
 	
 	/**
@@ -34,7 +34,7 @@ public class BasePage {
 	 * @param y pixel to scroll to.
 	 */
 	public void scrollToXY(int x, int y) {
-		((JavascriptExecutor)driver).executeScript(String.format("window.scrollTo(%s,%s)",x,y));
+            ((JavascriptExecutor)driver).executeScript(String.format("window.scrollTo(%s,%s)",x,y));
 	}
 	
 	
@@ -44,12 +44,12 @@ public class BasePage {
 	 * @return true if found
 	 */
 	public boolean isPartialTextOnPage(String textToSearch) {
-		try {
-			driver.findElement(By.xpath(String.format(".//*[contains(text(),'%s')]",textToSearch)));
-			return true;
-		} catch (NoSuchElementException nsee) {
-			return false;
-		}
+            try {
+                driver.findElement(By.xpath(String.format(".//*[contains(text(),'%s')]",textToSearch)));
+		return true;
+            } catch (NoSuchElementException nsee) {
+		return false;
+            }
 	}
 	/**
 	 * Checks text() results of each element on the page, if an exact match is found, returns true.
@@ -57,18 +57,18 @@ public class BasePage {
 	 * @return true if found
 	 */
 	public boolean isExactTextOnPage(String textToSearch) {
-		try {
-			driver.findElement(By.xpath(String.format(".//*[text() ='%s']",textToSearch)));
-			return true;
-		} catch (NoSuchElementException nsee) {
-			return false;
-		}
+            try {
+                driver.findElement(By.xpath(String.format(".//*[text() ='%s']",textToSearch)));
+                return true;
+            } catch (NoSuchElementException nsee) {
+                return false;
+            }
 	}
 	/**
 	 * Call to explicitly wait until the current page has fully loaded.
 	 */
 	public void waitUntilLoaded() {
-		new WebDriverWait(driver,5).until(driver -> ((JavascriptExecutor)driver).executeScript("return document.readyState").toString().equals("complete"));
+            new WebDriverWait(driver,5).until(driver -> ((JavascriptExecutor)driver).executeScript("return document.readyState").toString().equals("complete"));
 	}
 	
 	/**
@@ -76,7 +76,7 @@ public class BasePage {
 	 * @return
 	 */
 	public String getCurrentURL() {
-		return driver.getCurrentUrl();
+            return driver.getCurrentUrl();
 	}
 	
 }

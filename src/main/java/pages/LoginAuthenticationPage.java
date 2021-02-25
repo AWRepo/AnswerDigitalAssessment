@@ -21,7 +21,7 @@ public class LoginAuthenticationPage extends BasePage {
 	
 	
 	public LoginAuthenticationPage(WebDriver driver) {
-		super(driver);
+            super(driver);
 	}
 	
 
@@ -32,9 +32,8 @@ public class LoginAuthenticationPage extends BasePage {
 	 * @param username
 	 */
 	public void setUsername(String username) {
-		driver.findElement(usernameField).clear();
-		driver.findElement(usernameField).sendKeys(username);
-		
+            driver.findElement(usernameField).clear();
+            driver.findElement(usernameField).sendKeys(username);	
 	}
 	
 	
@@ -43,14 +42,14 @@ public class LoginAuthenticationPage extends BasePage {
 	 * @param password
 	 */
 	public void setPassword(String password) {
-		driver.findElement(passwordField).clear();
-		driver.findElement(passwordField).sendKeys(password);
+            driver.findElement(passwordField).clear();
+            driver.findElement(passwordField).sendKeys(password);
 	}
 	/**
 	 * Submits login.
 	 */
 	public void login() {
-		driver.findElement(loginForm).submit();
+            driver.findElement(loginForm).submit();
 	}
 	/**
 	 * Submits login using specified username and password inputs.
@@ -58,16 +57,16 @@ public class LoginAuthenticationPage extends BasePage {
 	 * @param password input for password field.
 	 */
 	public void loginWith(String username, String password) {
-		setUsername(username);
-		setPassword(password);
-		login();
+            setUsername(username);
+            setPassword(password);
+            login();
 	}
 	
 	/**
 	 * Triggers logout behaviours whilst logged in.
 	 */
 	public void logout() {
-		driver.findElement(logoutButton).click();
+            driver.findElement(logoutButton).click();
 	}
 	
 	/**
@@ -75,13 +74,12 @@ public class LoginAuthenticationPage extends BasePage {
 	 * @return current displayed flash message, returns an empty string if there's no current flash message.
 	 */
 	public String getFlashMessage() {
-		
-		try {
-			return driver.findElement(flashMessage).getText().split("\n")[0];
-			
-		}catch(NoSuchElementException nsee) {
-			return "";
-		}
+            
+            try {
+                return driver.findElement(flashMessage).getText().split("\n")[0];
+            }catch(NoSuchElementException nsee) {
+                return "";
+            }
 	}
 	/**
 	 * Checks if the user has successfully logged in by looking for a successFlashMessage.
@@ -89,10 +87,10 @@ public class LoginAuthenticationPage extends BasePage {
 	 */
 	public boolean isSuccessfulLogin() {
 		try {
-			driver.findElement(successMessage);
-			return true;
+                    driver.findElement(successMessage);
+                    return true;
 		}catch (NoSuchElementException nsee) {
-			return false;
+                    return false;
 		}
 	}
 	
@@ -103,17 +101,17 @@ public class LoginAuthenticationPage extends BasePage {
 	 */
 	public String getFlashType() {
 		try {
-			String[] flashClasses = driver.findElement(flashMessage).getAttribute("class").split(" ");
-			
-			for (String flashClass : flashClasses) {
-				if(!flashClass.equalsIgnoreCase("flash")) {
-					return flashClass;
-				}
+                    String[] flashClasses = driver.findElement(flashMessage).getAttribute("class").split(" ");
+                    
+                    for (String flashClass : flashClasses) {
+                        if(!flashClass.equalsIgnoreCase("flash")) {
+                            return flashClass;
 			}
-			//Returns "" when no class other than the flash identifier is listed.
-			return "";
+                    }
+                    //Returns "" when no class other than the flash identifier is listed.
+                    return "";
 		}catch(NoSuchElementException nsee) {			
-			return null;
+                    return null;
 		}
 		
 

@@ -23,9 +23,9 @@ public class InfiniteScrollTests extends BaseTest{
 	public void InfiniteScroll_Allows_DynamicScrolling() {
 		String searchText = "Infinite Scroll";
 		int waitTime = 1000;
-		
+                
+                
 		infiniteScrollPage.initialiseHeight();
-		
 		try {
 			Thread.sleep(waitTime);
 			infiniteScrollPage.scrollToBottomOfPage();
@@ -38,10 +38,6 @@ public class InfiniteScrollTests extends BaseTest{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-
-		
 		
 		assertTrue(infiniteScrollPage.isExactTextOnPage(searchText));
 	}
